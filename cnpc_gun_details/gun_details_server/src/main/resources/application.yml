@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: impala
+  datasource:
+    driver-class-name: com.facebook.presto.jdbc.PrestoDriver
+    username: slave1
+    password:
+    url: jdbc:presto://47.108.133.213:9999/hive/default
+    hikari:
+      minimum-idle: 10 #最小空闲连接数量
+      maximum-pool-size: 100 #连接池最大连接数
+      idle-timeout: 600000 #运行在连接池中闲置的最长时间
+      validation-timeout: 300000
+
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+server:
+  port: 7777
